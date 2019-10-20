@@ -1,0 +1,19 @@
+{
+  "name": "pumpkin",
+  "version": "1.0.0",
+  "description": "takehome",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geofflin/pumpkin.git"
+  },
+  "author": "Geoffrey Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geofflin/pumpkin/issues"
+  },
+  "homepage": "https://github.com/geofflin/pumpkin#readme"
+}
