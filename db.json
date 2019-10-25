@@ -1,0 +1,11 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "petType": "dog",
+      "name": "rowdy",
+      "age": 3,
+      "breed": "chocolate-lab"
+    }
+  ]
+}

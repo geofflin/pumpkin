@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/geofflin/pumpkin/issues"
   },
-  "homepage": "https://github.com/geofflin/pumpkin#readme"
+  "homepage": "https://github.com/geofflin/pumpkin#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router": "^5.1.2"
+  }
 }
