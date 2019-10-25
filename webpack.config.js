@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'client', 'index.js'),
+  entry: path.join(__dirname, 'src', 'index.js'),
   module: {
     rules: [
       {
@@ -16,8 +16,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -25,15 +29,18 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'build.js',
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    contentBase: path.join(__dirname, '/public'),
+    contentBase: path.join(__dirname, '/'),
     port: 8080,
-    publicPath: '/build',
-    // hot: true,
-    // historyApiFallback: true,
+    proxy: {
+      '/pets': 'http://localhost:3001',
+    },
+    publicPath: 'http://localhost:8080/dist',
+    hot: false,
+    historyApiFallback: true,
   },
 };
