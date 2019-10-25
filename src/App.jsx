@@ -4,7 +4,9 @@ import {
   Switch,
   Link,
 } from 'react-router-dom';
-import MyPets from './components/MyPets';
+import MyPets from './routes/MyPets';
+import PetsNew from './routes/PetsNew';
+import PetsSuccess from './routes/PetsSuccess';
 
 const App = () => (
   <Fragment>
@@ -14,8 +16,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/my-pets" component={MyPets} />
-      <Route path="/pets/new" component={MyPets} />
-      <Route path="/pets/success" component={MyPets} />
+      <Route path="/pets/new" component={PetsNew} />
+      <Route path="/pets/success" component={PetsSuccess} />
     </Switch>
   </Fragment>
 );

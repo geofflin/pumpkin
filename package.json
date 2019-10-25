@@ -4,8 +4,9 @@
   "description": "takehome",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server & json-server --watch db.json --port 3001",
     "build": "webpack",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server & json-server --watch db.json --port 3001",
     "test": "test"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
     "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.4"
   },
   "devDependencies": {
