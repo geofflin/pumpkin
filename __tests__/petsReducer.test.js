@@ -1,22 +1,30 @@
 import petsReducer from '../src/reducers/petsReducer';
 
 describe('MegaMarkets reducer', () => {
+  const initialState = {
+    pets: [],
+    petID: 0,
+    petType: 'dog',
+    petName: '',
+    petAge: 0,
+    petBreed: '',
+  };
   let state;
 
   beforeEach(() => {
     state = {
       pets: [],
-      petID: 0,
-      petType: 'dog',
-      petName: '',
-      petAge: 0,
-      petBreed: '',
+      petID: 12,
+      petType: 'cat',
+      petName: 'test',
+      petAge: 23,
+      petBreed: 'hot dog',
     };
   });
 
   describe('default state', () => {
     it('should return default state when given an undefined input', () => {
-      expect(petsReducer(undefined, { type: undefined })).toEqual(state);
+      expect(petsReducer(undefined, { type: undefined })).toEqual(initialState);
     });
   });
 
@@ -49,7 +57,7 @@ describe('MegaMarkets reducer', () => {
     });
 
     it('should return an object not strictly equal to the original', () => {
-      expect(newState).not.toBe(state);
+      expect(petsReducer(state, action)).not.toBe(state);
     });
 
   });
@@ -64,7 +72,7 @@ describe('MegaMarkets reducer', () => {
     });
 
     it('should return an object not strictly equal to the original', () => {
-      expect(newState).not.toBe(state);
+      expect(petsReducer(state, action)).not.toBe(state);
     });
 
   });
@@ -79,7 +87,7 @@ describe('MegaMarkets reducer', () => {
     });
 
     it('should return an object not strictly equal to the original', () => {
-      expect(newState).not.toBe(state);
+      expect(petsReducer(state, action)).not.toBe(state);
     });
   });
 
@@ -93,7 +101,7 @@ describe('MegaMarkets reducer', () => {
     });
 
     it('should return an object not strictly equal to the original', () => {
-      expect(newState).not.toBe(state);
+      expect(petsReducer(state, action)).not.toBe(state);
     });
   });
 
@@ -107,15 +115,23 @@ describe('MegaMarkets reducer', () => {
     });
 
     it('should return an object not strictly equal to the original', () => {
-      expect(newState).not.toBe(state);
+      expect(petsReducer(state, action)).not.toBe(state);
     });
   });
 
-  describe('ACTION: ADD_NEW_PET_SUCCESS', () => {
-    it('should...', () => {
+  describe('ACTION: RESET_NEW_PET', () => {
+    const action = { type: 'RESET_NEW_PET' };
+    const newState = petsReducer(state, action);
 
+    it('should reset new pet state', () => {
+      expect(newState.petName).toBe('');
+      expect(newState.petType).toBe('dog');
+      expect(newState.petAge).toBe(0);
+      expect(newState.petBreed).toBe('');
+    });
+
+    it('should return an object not strictly equal to the original', () => {
+      expect(petsReducer(state, action)).not.toBe(state);
     });
   });
-
-
 });

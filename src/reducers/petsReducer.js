@@ -25,7 +25,7 @@ const petsReducer = (state = initialState, action) => {
       return { ...state, petBreed: action.payload.petBreed }
     case types.RESET_NEW_PET:
       return {
-        pets: [],
+        ...state,
         petType: 'dog',
         petName: '',
         petAge: 0,
