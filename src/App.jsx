@@ -11,9 +11,7 @@ import PetsSuccess from './routes/PetsSuccess';
 
 const App = () => (
   <Fragment>
-    <div><Link to="/my-pets">Home</Link></div>
-    <div><Link to="/pets/new">Add new pet</Link></div>
-    <div><Link to="/pets/success">Successfully added pet</Link></div>
+    <Link to="/my-pets">Home</Link>
     <hr />
     <Switch>
       <Route exact path="/">

@@ -11,17 +11,16 @@ const mapDispatchToProps = dispatch => ({
   getPets: () => dispatch(actions.getPets()),
 });
 
-
-const MyPets = ({ pets, getPets }) => {
+const MyPets = ({ pets, getPets, history }) => {
   useEffect(getPets, []);
 
   const myPets = pets.map(pet => <PetProfile key={pet.id} pet={pet} />);
   return (
     <div>
+      <button onClick={() => history.push('/pets/new')}>Add New Pet</button>
       {myPets}
-      <button onClick={() => console.log('hi')}>Add New Pet</button>
     </div>   
-  )
+  );
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyPets);
