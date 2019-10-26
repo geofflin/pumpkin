@@ -12,7 +12,7 @@ const initialState = {
 const petsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_PETS_SUCCESS:
-      return { ...state, petID: action.pets.length + 1 };
+      return { ...state, pets: action.pets, petID: action.pets.length + 1 };
     case types.GET_PETS_FAILURE:
       return state;
     case types.SET_PET_TYPE:
