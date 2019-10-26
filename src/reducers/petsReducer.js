@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   pets: [],
   petID: 0,
-  petType: 'Dog',
+  petType: 'dog',
   petName: '',
   petAge: 0,
   petBreed: '',
@@ -29,11 +29,10 @@ const petsReducer = (state = initialState, action) => {
     case types.SET_PET_BREED:
       return { ...state, pets, petBreed: action.payload.petBreed }
     case types.ADD_NEW_PET_SUCCESS:
-      console.log('IN REDUCER: ADD_NEW_PET_SUCCESS')
       return {
         pets: [],
         petID: action.payload.petID + 1,
-        petType: 'Dog',
+        petType: 'dog',
         petName: '',
         petAge: 0,
         petBreed: '',

@@ -13,20 +13,6 @@
       "name": "jackson",
       "age": 14,
       "breed": "basset-hound"
-    },
-    {
-      "id": 3,
-      "petType": "Dog",
-      "name": "asdf",
-      "age": 0,
-      "breed": "asdf"
-    },
-    {
-      "id": 4,
-      "petType": "cat",
-      "name": "adf",
-      "age": "7",
-      "breed": "adsfasdf"
     }
   ]
 }

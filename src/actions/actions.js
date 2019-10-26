@@ -49,5 +49,5 @@ export const addNewPet = () => (dispatch, getState) => {
       history.push('/pets/success');
       dispatch({ type: types.ADD_NEW_PET_SUCCESS });
     })
-    .catch(err => dispatch({ type: types.ADD_NEW_PET_FAILURE }));
+    .catch(err => dispatch({ type: types.ADD_NEW_PET_FAILURE, err }));
 };
