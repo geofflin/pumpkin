@@ -16,10 +16,10 @@
     },
     {
       "id": 3,
-      "petType": "dog",
-      "name": "Scooby",
-      "age": "3",
-      "breed": "cartoon"
+      "petType": "Dog",
+      "name": "asdf",
+      "age": 0,
+      "breed": "asdf"
     }
   ]
 }

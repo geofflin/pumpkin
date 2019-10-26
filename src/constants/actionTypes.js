@@ -1,5 +1,5 @@
-export const LOAD_PETS_SUCCESS = 'LOAD_PETS_SUCCESS';
-export const LOAD_PETS_FAILURE = 'LOAD_PETS_FAILURE';
+export const GET_PETS_SUCCESS = 'GET_PETS_SUCCESS';
+export const GET_PETS_FAILURE = 'GET_PETS_FAILURE';
 
 export const SET_PET_TYPE = 'SET_PET_TYPE';
 export const SET_PET_NAME = 'SET_PET_NAME';

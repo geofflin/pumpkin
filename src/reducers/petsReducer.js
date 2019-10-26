@@ -12,14 +12,13 @@ const initialState = {
 const petsReducer = (state = initialState, action) => {
   const pets = state.pets;
   switch (action.type) {
-    case types.LOAD_PETS_SUCCESS:
+    case types.GET_PETS_SUCCESS:
       return {
         ...state,
         pets: action.pets,
         petID: action.pets.length + 1,
       };
-    case types.LOAD_PETS_FAILURE:
-      console.error('Pets loaded unsuccessfully\n', action.err);
+    case types.GET_PETS_FAILURE:
       return state;
     case types.SET_PET_TYPE:
       return { ...state, pets, petType: action.payload.petType }

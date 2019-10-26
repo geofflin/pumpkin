@@ -1,11 +1,12 @@
 // Action Creators
 import * as types from '../constants/actionTypes';
+import history from '../history';
 
 export const getPets = () => dispatch => {
   fetch(`http://localhost:3001/pets/`)
     .then(res => res.json())
-    .then(pets => dispatch({ type: types.LOAD_PETS_SUCCESS, pets }))
-    .catch(err => dispatch({ type: types.LOAD_PETS_FAILURE, err }));
+    .then(pets => dispatch({ type: types.GET_PETS_SUCCESS, pets }))
+    .catch(err => dispatch({ type: types.GET_PETS_FAILURE, err }));
 };
 
 export const setPetType = petType => ({
@@ -44,6 +45,9 @@ export const addNewPet = () => (dispatch, getState) => {
     body: JSON.stringify(newPet),
   })
     .then(res => res.json())
-    .then(pet => dispatch({ type: types.ADD_NEW_PET_SUCCESS }))
+    .then(pet => {
+      history.push('/pets/success');
+      dispatch({ type: types.ADD_NEW_PET_SUCCESS });
+    })
     .catch(err => dispatch({ type: types.ADD_NEW_PET_FAILURE }));
 };
