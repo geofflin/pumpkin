@@ -1,11 +1,9 @@
 import React from 'react';
 
-const PetsSuccess = () => {
-  return (
-    <div>
-      PetsSuccess
-    </div>
-  );
-}
+const PetsSuccess = ({ petName }) => (
+  <div>
+    Congrats on enrolling {petName}!
+  </div>
+);
 
 export default PetsSuccess;

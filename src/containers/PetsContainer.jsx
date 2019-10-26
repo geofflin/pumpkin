@@ -53,7 +53,7 @@ const PetsContainer = props => (
           />
         )}
       />
-      <Route exact path="/pets/success" component={PetsSuccess} />
+      <Route exact path="/pets/success" render={() => <PetsSuccess petName={props.petName} />} />
     </Switch>
   </Fragment>
 );

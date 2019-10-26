@@ -20,6 +20,13 @@
       "name": "asdf",
       "age": 0,
       "breed": "asdf"
+    },
+    {
+      "id": 4,
+      "petType": "cat",
+      "name": "adf",
+      "age": "7",
+      "breed": "adsfasdf"
     }
   ]
 }
