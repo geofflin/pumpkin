@@ -21,21 +21,12 @@ const mapDispatchToProps = dispatch => ({
   handlePetNameChange: petName => dispatch(actions.setPetName(petName)),
   handlePetAgeChange: petAge => dispatch(actions.setPetAge(petAge)),
   handlePetBreedChange: petBreed => dispatch(actions.setPetBreed(petBreed)),
+  addNewPet: (petID, petType, petName, petAge, petBreed) => {
+    dispatch(actions.addNewPet(petID, petType, petName, petAge, petBreed))
+  },
 });
 
-const PetsContainer = ({
-  pets,
-  petID,
-  petType,
-  petName,
-  petAge,
-  petBreed,
-  getPets,
-  handlePetTypeChange,
-  handlePetNameChange,
-  handlePetAgeChange,
-  handlePetBreedChange,
-}) => (
+const PetsContainer = props => (
   <Fragment>
     <Link to="/my-pets">Home</Link>
     <hr />
@@ -43,20 +34,24 @@ const PetsContainer = ({
       <Route exact path="/">
         <Redirect to="/my-pets" />
       </Route>
-      <Route exact path="/my-pets" render={() => <MyPets pets={pets} getPets={getPets} />} />
+      <Route 
+        exact path="/my-pets"
+        render={() => <MyPets pets={props.pets} getPets={props.getPets}
+      />} />
       <Route 
         exact path="/pets/new"
         render={() => (
           <PetsNew
-            petID={petID}
-            petType={petType}
-            petName={petName}
-            petAge={petAge}
-            petBreed={petBreed}
-            handlePetTypeChange={handlePetTypeChange}
-            handlePetNameChange={handlePetNameChange}
-            handlePetAgeChange={handlePetAgeChange}
-            handlePetBreedChange={handlePetBreedChange}
+            petID={props.petID}
+            petType={props.petType}
+            petName={props.petName}
+            petAge={props.petAge}
+            petBreed={props.petBreed}
+            handlePetTypeChange={props.handlePetTypeChange}
+            handlePetNameChange={props.handlePetNameChange}
+            handlePetAgeChange={props.handlePetAgeChange}
+            handlePetBreedChange={props.handlePetBreedChange}
+            addNewPet={props.addNewPet}
           />
         )}
       />

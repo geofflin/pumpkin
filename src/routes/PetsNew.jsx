@@ -1,16 +1,6 @@
 import React from 'react';
 
-const PetsNew = ({  
-  petID,
-  petType,
-  petName,
-  petAge,
-  petBreed,
-  handlePetTypeChange,
-  handlePetNameChange,
-  handlePetAgeChange,
-  handlePetBreedChange,
-}) => {
+const PetsNew = props => {
 
   const submitNewPet = e => {
     e.preventDefault();
@@ -26,7 +16,7 @@ const PetsNew = ({
     <form onSubmit={submitNewPet}>
       <section>
         <label htmlFor="petType">Type:</label>
-        <select id="petType" onChange={e => handlePetTypeChange(e.target.value)}>
+        <select id="petType" onChange={e => props.handlePetTypeChange(e.target.value)}>
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
         </select>
@@ -37,12 +27,12 @@ const PetsNew = ({
           type="text"
           name="name"
           id="name"
-          onChange={e => handlePetNameChange(e.target.value)}
+          onChange={e => props.handlePetNameChange(e.target.value)}
         />
       </section>
       <section>
         <label htmlFor="age">Age:</label>
-        <select id="age" onChange={e => handlePetAgeChange(e.target.value)}>
+        <select id="age" onChange={e => props.handlePetAgeChange(e.target.value)}>
           {ageOptions}
         </select>
       </section>
@@ -52,7 +42,7 @@ const PetsNew = ({
           type="text"
           name="breed"
           id="breed"
-          onChange={e => handlePetBreedChange(e.target.value)}
+          onChange={e => props.handlePetBreedChange(e.target.value)}
         />
       </section>
       <input type="submit" value="Add Pet" />

@@ -10,20 +10,25 @@ export const getPets = () => dispatch => {
 
 export const setPetType = petType => ({
   type: types.SET_PET_TYPE,
-  payload: { petType }
-})
+  payload: { petType },
+});
 
 export const setPetName = petName => ({
   type: types.SET_PET_NAME,
-  payload: { petName }
-})
+  payload: { petName },
+});
 
 export const setPetAge = petAge => ({
   type: types.SET_PET_AGE,
-  payload: { petAge }
-})
+  payload: { petAge },
+});
 
 export const setPetBreed = petBreed => ({
   type: types.SET_PET_BREED,
-  payload: { petBreed }
-})
+  payload: { petBreed },
+});
+
+export const addNewPet = (petID, petType, petName, petAge, petBreed) => ({
+  type: types.ADD_NEW_PET,
+  payload: { petID, petType, petName, petAge, petBreed },
+});
