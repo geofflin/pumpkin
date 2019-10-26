@@ -10,24 +10,19 @@ const initialState = {
 };
 
 const petsReducer = (state = initialState, action) => {
-  const pets = state.pets;
   switch (action.type) {
     case types.GET_PETS_SUCCESS:
-      return {
-        ...state,
-        pets: action.pets,
-        petID: action.pets.length + 1,
-      };
+      return { ...state, petID: action.pets.length + 1 };
     case types.GET_PETS_FAILURE:
       return state;
     case types.SET_PET_TYPE:
-      return { ...state, pets, petType: action.payload.petType }
+      return { ...state, petType: action.payload.petType }
     case types.SET_PET_NAME:
-      return { ...state, pets, petName: action.payload.petName }
+      return { ...state, petName: action.payload.petName }
     case types.SET_PET_AGE:
-      return { ...state, pets, petAge: action.payload.petAge }
+      return { ...state, petAge: action.payload.petAge }
     case types.SET_PET_BREED:
-      return { ...state, pets, petBreed: action.payload.petBreed }
+      return { ...state, petBreed: action.payload.petBreed }
     case types.ADD_NEW_PET_SUCCESS:
       return {
         pets: [],
