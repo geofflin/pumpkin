@@ -2,9 +2,9 @@ import React from 'react';
 
 const PetsNew = () => {
   return (
-    <div>
+    <form action="/pets" method="post">
       PetsNew
-    </div>
+    </form>
   );
 };
 

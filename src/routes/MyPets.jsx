@@ -13,7 +13,6 @@ const mapDispatchToProps = dispatch => ({
 
 const MyPets = ({ pets, getPets, history }) => {
   useEffect(getPets, []);
-
   const myPets = pets.map(pet => <PetProfile key={pet.id} pet={pet} />);
   return (
     <div>

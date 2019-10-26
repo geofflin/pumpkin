@@ -6,6 +6,13 @@
       "name": "rowdy",
       "age": 3,
       "breed": "chocolate-lab"
+    },
+    {
+      "id": 2,
+      "petType": "dog",
+      "name": "jackson",
+      "age": 14,
+      "breed": "basset-hound"
     }
   ]
 }
