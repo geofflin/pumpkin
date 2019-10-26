@@ -13,6 +13,13 @@
       "name": "jackson",
       "age": 14,
       "breed": "basset-hound"
+    },
+    {
+      "id": 3,
+      "petType": "dog",
+      "name": "Scooby",
+      "age": "3",
+      "breed": "cartoon"
     }
   ]
 }

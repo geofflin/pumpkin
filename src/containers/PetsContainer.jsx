@@ -21,9 +21,7 @@ const mapDispatchToProps = dispatch => ({
   handlePetNameChange: petName => dispatch(actions.setPetName(petName)),
   handlePetAgeChange: petAge => dispatch(actions.setPetAge(petAge)),
   handlePetBreedChange: petBreed => dispatch(actions.setPetBreed(petBreed)),
-  addNewPet: (petID, petType, petName, petAge, petBreed) => {
-    dispatch(actions.addNewPet(petID, petType, petName, petAge, petBreed))
-  },
+  addNewPet: () => dispatch(actions.addNewPet()),
 });
 
 const PetsContainer = props => (

@@ -28,7 +28,22 @@ export const setPetBreed = petBreed => ({
   payload: { petBreed },
 });
 
-export const addNewPet = (petID, petType, petName, petAge, petBreed) => ({
-  type: types.ADD_NEW_PET,
-  payload: { petID, petType, petName, petAge, petBreed },
-});
+export const addNewPet = () => (dispatch, getState) => {
+  const { petID, petType, petName, petAge, petBreed } = getState().pets;
+  if (!petName || !petBreed) return;
+  const newPet = {
+    id: petID,
+    petType: petType,
+    name: petName,
+    age: petAge,
+    breed: petBreed,
+  };
+  fetch(`http://localhost:3001/pets/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newPet),
+  })
+    .then(res => res.json())
+    .then(pet => dispatch({ type: types.ADD_NEW_PET_SUCCESS }))
+    .catch(err => dispatch({ type: types.ADD_NEW_PET_FAILURE }));
+};
