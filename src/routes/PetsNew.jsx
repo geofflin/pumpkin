@@ -1,5 +1,4 @@
 import React from 'react';
-import PetInputField from '../components/PetInputField';
 
 const PetsNew = ({ pets, petName, getPets, handlePetNameChange }) => {
   const submitNewPet = e => {
