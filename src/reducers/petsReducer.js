@@ -21,16 +21,12 @@ const petsReducer = (state = initialState, action) => {
       console.error('Pets loaded unsuccessfully\n', action.err);
       return state;
     case types.SET_PET_TYPE:
-      console.log(action.payload.petType);
       return { ...state, petType: action.payload.petType }
     case types.SET_PET_NAME:
-      console.log(action.payload.petName);
       return { ...state, petName: action.payload.petName }
     case types.SET_PET_AGE:
-      console.log(action.payload.petAge);
       return { ...state, petAge: action.payload.petAge }
     case types.SET_PET_BREED:
-      console.log(action.payload.petBreed);
       return { ...state, petBreed: action.payload.petBreed }
     default:
       return state;

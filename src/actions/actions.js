@@ -8,7 +8,7 @@ export const getPets = () => dispatch => {
     .catch(err => dispatch({ type: types.LOAD_PETS_FAILURE, err }));
 };
 
-export const setPetTYPE = petType => ({
+export const setPetType = petType => ({
   type: types.SET_PET_TYPE,
   payload: { petType }
 })

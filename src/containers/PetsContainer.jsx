@@ -12,16 +12,30 @@ import PetsNew from '../routes/PetsNew';
 import PetsSuccess from '../routes/PetsSuccess';
 
 const mapStateToProps = store => ({
-  pets: store.pets.pets,
-  petName: store.pets.petName,
+  ...store.pets,
 });
 
 const mapDispatchToProps = dispatch => ({
   getPets: () => dispatch(actions.getPets()),
+  handlePetTypeChange: petType => dispatch(actions.setPetType(petType)),
   handlePetNameChange: petName => dispatch(actions.setPetName(petName)),
+  handlePetAgeChange: petAge => dispatch(actions.setPetAge(petAge)),
+  handlePetBreedChange: petBreed => dispatch(actions.setPetBreed(petBreed)),
 });
 
-const PetsContainer = ({ pets, petName, getPets, handlePetNameChange }) => (
+const PetsContainer = ({
+  pets,
+  petID,
+  petType,
+  petName,
+  petAge,
+  petBreed,
+  getPets,
+  handlePetTypeChange,
+  handlePetNameChange,
+  handlePetAgeChange,
+  handlePetBreedChange,
+}) => (
   <Fragment>
     <Link to="/my-pets">Home</Link>
     <hr />
@@ -33,7 +47,17 @@ const PetsContainer = ({ pets, petName, getPets, handlePetNameChange }) => (
       <Route 
         exact path="/pets/new"
         render={() => (
-          <PetsNew pets={pets} petName={petName} handlePetNameChange={handlePetNameChange}/>
+          <PetsNew
+            petID={petID}
+            petType={petType}
+            petName={petName}
+            petAge={petAge}
+            petBreed={petBreed}
+            handlePetTypeChange={handlePetTypeChange}
+            handlePetNameChange={handlePetNameChange}
+            handlePetAgeChange={handlePetAgeChange}
+            handlePetBreedChange={handlePetBreedChange}
+          />
         )}
       />
       <Route exact path="/pets/success" component={PetsSuccess} />
