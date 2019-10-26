@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions/actions';
+import { withRouter } from 'react-router-dom';
 import PetProfile from '../components/PetProfile';
-
-const mapStateToProps = store => ({
-  pets: store.pets.pets,
-});
-
-const mapDispatchToProps = dispatch => ({
-  getPets: () => dispatch(actions.getPets()),
-});
 
 const MyPets = ({ pets, getPets, history }) => {
   useEffect(getPets, []);
@@ -22,4 +13,4 @@ const MyPets = ({ pets, getPets, history }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyPets);
+export default withRouter(MyPets);

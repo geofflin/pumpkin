@@ -1,8 +1,8 @@
 import React from 'react';
-import PetContainer from './containers/PetContainer';
+import PetsContainer from './containers/PetsContainer';
 
 const App = () => (
-  <PetContainer />
+  <PetsContainer />
 );
 
 export default App;
