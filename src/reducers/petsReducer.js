@@ -7,8 +7,7 @@ const initialState = {
 const petsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.LOAD_PETS_SUCCESS:
-      console.log('Pets loaded successfully\n', action.pets);
-      return state;
+      return { ...state, pets: action.pets };
     case types.LOAD_PETS_FAILURE:
       console.error('Pets loaded unsuccessfully\n', action.err);
       return state;

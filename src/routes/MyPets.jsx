@@ -1,9 +1,7 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
+import PetProfile from '../components/PetProfile';
 
 const mapStateToProps = store => ({
   pets: store.pets.pets,
@@ -14,12 +12,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-const MyPets = ({ getPets }) => {
-  useEffect(getPets);
+const MyPets = ({ pets, getPets }) => {
+  useEffect(getPets, []);
 
+  const myPets = pets.map(pet => <PetProfile key={pet.id} pet={pet} />);
   return (
     <div>
-      MyPets
+      {myPets}
       <button onClick={() => console.log('hi')}>Add New Pet</button>
     </div>   
   )
