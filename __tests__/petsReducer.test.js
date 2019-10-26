@@ -34,18 +34,18 @@ describe('MegaMarkets reducer', () => {
     const action = { type: 'GET_PETS_SUCCESS', pets };
     const newState = petsReducer(state, action);
 
-    it('number of pets should be updated', () => {
+    it('should update number of pets', () => {
       expect(state.pets.length).toBe(0);
       expect(newState.pets.length).toBe(2);
     });
 
-    it('new pets should be added into the pets state array', () => {
+    it('should update pets', () => {
       expect(newState.pets[0]).toEqual(scooby);
       expect(newState.pets[1]).toEqual(garfield);
     });
 
-    it('petID should be updated', () => {
-      expect(newState.petID).toBe(newState.pets.length + 1);
+    it('should update petID', () => {
+      expect(newState.petID).toBe(3);
     });
 
     it('should return an object not strictly equal to the original', () => {
@@ -55,26 +55,59 @@ describe('MegaMarkets reducer', () => {
   });
 
   describe('ACTION: SET_PET_TYPE', () => {
-    it('should...', () => {
+    const petType = 'cat';
+    const action = { type: 'SET_PET_TYPE', payload: { petType } };
+    const newState = petsReducer(state, action);
 
+    it('should update pet type', () => {
+      expect(newState.petType).toBe('cat');
     });
+
+    it('should return an object not strictly equal to the original', () => {
+      expect(newState).not.toBe(state);
+    });
+
   });
 
   describe('ACTION: SET_PET_NAME', () => {
-    it('should...', () => {
+    const petName = 'Clifford';
+    const action = { type: 'SET_PET_NAME', payload: { petName } };
+    const newState = petsReducer(state, action);
 
+    it('should update pet name', () => {
+      expect(newState.petName).toBe('Clifford');
+    });
+
+    it('should return an object not strictly equal to the original', () => {
+      expect(newState).not.toBe(state);
     });
   });
 
   describe('ACTION: SET_PET_AGE', () => {
-    it('should...', () => {
+    const petAge = 5;
+    const action = { type: 'SET_PET_AGE', payload: { petAge } };
+    const newState = petsReducer(state, action);
 
+    it('should update pet age', () => {
+      expect(newState.petAge).toBe(5);
+    });
+
+    it('should return an object not strictly equal to the original', () => {
+      expect(newState).not.toBe(state);
     });
   });
 
   describe('ACTION: SET_PET_BREED', () => {
-    it('should...', () => {
+    const petBreed = 'pomeranian';
+    const action = { type: 'SET_PET_BREED', payload: { petBreed } };
+    const newState = petsReducer(state, action);
 
+    it('should update pet breed', () => {
+      expect(newState.petBreed).toBe('pomeranian');
+    });
+
+    it('should return an object not strictly equal to the original', () => {
+      expect(newState).not.toBe(state);
     });
   });
 
