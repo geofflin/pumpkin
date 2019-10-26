@@ -2,14 +2,20 @@ import React, {
   useState,
   useEffect,
 } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
 
-const MyPets = () => {
-  useEffect(() => {
-    fetch('http://localhost:3001/pets/1')
-      .then(pets => pets.json())
-      .then(pets => console.log('pets', pets))
-      .catch(err => console.error('error fetching data', err));
-  })
+const mapStateToProps = store => ({
+  pets: store.pets.pets,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getPets: () => dispatch(actions.getPets()),
+});
+
+
+const MyPets = ({ getPets }) => {
+  useEffect(getPets);
 
   return (
     <div>
@@ -19,4 +25,4 @@ const MyPets = () => {
   )
 };
 
-export default MyPets;
+export default connect(mapStateToProps, mapDispatchToProps)(MyPets);
