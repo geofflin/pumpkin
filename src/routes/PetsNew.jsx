@@ -1,10 +1,11 @@
 import React from 'react';
+import { addNewPet } from '../actions/actions';
 
 const PetsNew = props => {
 
   const submitNewPet = e => {
     e.preventDefault();
-    console.log(e.target);
+    props.addNewPet(props.petID, props.petType, props.petName, props.petAge, props.petBreed);
   };
 
   const ageOptions = [];

@@ -28,6 +28,13 @@ const petsReducer = (state = initialState, action) => {
       return { ...state, petAge: action.payload.petAge }
     case types.SET_PET_BREED:
       return { ...state, petBreed: action.payload.petBreed }
+    case types.ADD_NEW_PET:
+      console.log('petId', action.payload.petID);
+      console.log('petType', action.payload.petType);
+      console.log('petName', action.payload.petName);
+      console.log('petAge', action.payload.petAge);
+      console.log('petBreed', action.payload.petBreed);
+      return state;
     default:
       return state;
   };
