@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
   handlePetNameChange: petName => dispatch(actions.setPetName(petName)),
   handlePetAgeChange: petAge => dispatch(actions.setPetAge(petAge)),
   handlePetBreedChange: petBreed => dispatch(actions.setPetBreed(petBreed)),
+  resetNewPet: () => dispatch(actions.resetNewPet()),
   addNewPet: () => dispatch(actions.addNewPet()),
 });
 
@@ -34,8 +35,8 @@ const PetsContainer = props => (
       </Route>
       <Route 
         exact path="/my-pets"
-        render={() => <MyPets pets={props.pets} getPets={props.getPets}
-      />} />
+        render={() => <MyPets pets={props.pets} getPets={props.getPets} resetNewPet={props.resetNewPet} />}
+      />
       <Route 
         exact path="/pets/new"
         render={() => (

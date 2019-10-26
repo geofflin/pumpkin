@@ -29,6 +29,10 @@ export const setPetBreed = petBreed => ({
   payload: { petBreed },
 });
 
+export const resetNewPet = () => ({
+  type: types.RESET_NEW_PET,
+});
+
 export const addNewPet = () => (dispatch, getState) => {
   const { petID, petType, petName, petAge, petBreed } = getState().pets;
   if (!petName || !petBreed) return;
