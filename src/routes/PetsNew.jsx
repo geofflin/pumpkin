@@ -1,4 +1,5 @@
 import React from 'react';
+import PetInputField from '../components/PetInputField';
 
 const PetsNew = ({ pets, petName, getPets, handlePetNameChange }) => {
   const submitNewPet = e => {
@@ -6,15 +7,19 @@ const PetsNew = ({ pets, petName, getPets, handlePetNameChange }) => {
     console.log(e.target);
   };
 
+  const ageOptions = [];
+  for (let age = 0; age < 50; age += 1) {
+    ageOptions.push(<option key={age} value="age">{age}</option>);
+  }
+
   return (
     <form onSubmit={submitNewPet}>
       <section>
-        <label htmlFor="id">ID:</label>
-        <input type="text" name="id" id="id" />
-      </section>
-      <section>
         <label htmlFor="petType">Type:</label>
-        <input type="text" name="petType" id="petType" />
+        <select id="petType">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
       </section>
       <section>
         <label htmlFor="name">Name:</label>
@@ -27,7 +32,9 @@ const PetsNew = ({ pets, petName, getPets, handlePetNameChange }) => {
       </section>
       <section>
         <label htmlFor="age">Age:</label>
-        <input type="text" name="age" id="age" />
+        <select id="age">
+          {ageOptions}
+        </select>
       </section>
       <section>
         <label htmlFor="breed">Breed:</label>
