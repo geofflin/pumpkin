@@ -6,7 +6,6 @@ import { render } from 'react-dom';
 import store from './store';
 import App from './App.jsx';
 
-
 render(
   <Provider store={store}>
     <Router>
