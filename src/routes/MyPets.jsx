@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import PetProfile from '../components/PetProfile';
+import styles from './MyPets.css';
 
 const MyPets = ({ pets, getPets, resetNewPet, history }) => {
   useEffect(getPets, []);
@@ -8,12 +9,14 @@ const MyPets = ({ pets, getPets, resetNewPet, history }) => {
   const handleClick = () => {
     resetNewPet();
     history.push('/pets/new');
-  }
+  };
 
   return (
     <div>
       <button onClick={handleClick}>Add New Pet</button>
-      {myPets}
+      <div className={styles.gridContainer}>
+        {myPets}
+      </div>
     </div>   
   );
 };

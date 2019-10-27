@@ -1,13 +1,15 @@
 import React from 'react';
+import styles from './PetProfile.css'
 
 const PetProfile = ({ pet }) => {
   return (
-    <div>
-      <h2>Pet {pet.id}</h2>
-      <p>Type: {pet.petType}</p>
-      <p>Name: {pet.name}</p>
-      <p>Age: {pet.age}</p>
-      <p>Breed: {pet.breed}</p>
+    <div className={styles.gridItem}>
+      <h2>{pet.name}</h2>
+      <ul className={styles.list}>
+        <li>Type: {pet.petType}</li>
+        <li>Age: {pet.age}</li>
+        <li>Breed: {pet.breed}</li>
+      </ul>
     </div>
   );
 };
