@@ -13,7 +13,7 @@ const MyPets = ({ pets, getPets, resetNewPet, history }) => {
 
   return (
     <div>
-      <button onClick={handleClick}>Add New Pet</button>
+      <button className={styles.button} onClick={handleClick}>Add New Pet</button>
       <div className={styles.gridContainer}>
         {myPets}
       </div>
