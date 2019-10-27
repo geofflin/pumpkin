@@ -1,0 +1,23 @@
+.button {
+  color: white;
+  background-color: #2196F3;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.petForm {
+  width: 30%;
+}
+
+.petField {
+  width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

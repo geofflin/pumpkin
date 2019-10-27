@@ -6,34 +6,6 @@
       "name": "rowdy",
       "age": 3,
       "breed": "chocolate-lab"
-    },
-    {
-      "id": 2,
-      "petType": "dog",
-      "name": "jackson",
-      "age": 14,
-      "breed": "basset-hound"
-    },
-    {
-      "id": 3,
-      "petType": "cat",
-      "name": "Garfield",
-      "age": "13",
-      "breed": "Cartoon"
-    },
-    {
-      "id": 4,
-      "petType": "dog",
-      "name": "Scooby",
-      "age": "6",
-      "breed": "Cartoon"
-    },
-    {
-      "id": 5,
-      "petType": "cat",
-      "name": "Sylvester",
-      "age": "7",
-      "breed": "Cartoon"
     }
   ]
 }

@@ -21,10 +21,10 @@ const PetsNew = props => {
   }
 
   return (
-    <form onSubmit={submitNewPet}>
+    <form className={styles.petForm} onSubmit={submitNewPet}>
       <section>
         <label htmlFor="petType">Type:</label>
-        <select id="petType" onChange={e => handlePetTypeChange(e.target.value)}>
+        <select className={styles.petField} id="petType" onChange={e => handlePetTypeChange(e.target.value)}>
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
         </select>
@@ -32,6 +32,7 @@ const PetsNew = props => {
       <section>
         <label htmlFor="name">Name:</label>
         <input
+          className={styles.petField}
           type="text"
           name="name"
           id="name"
@@ -40,20 +41,21 @@ const PetsNew = props => {
       </section>
       <section>
         <label htmlFor="age">Age:</label>
-        <select id="age" onChange={e => handlePetAgeChange(e.target.value)}>
+        <select className={styles.petField} id="age" onChange={e => handlePetAgeChange(e.target.value)}>
           {ageOptions}
         </select>
       </section>
       <section>
         <label htmlFor="breed">Breed:</label>
         <input
+          className={styles.petField}
           type="text"
           name="breed"
           id="breed"
           onChange={e => handlePetBreedChange(e.target.value)}
         />
       </section>
-      <input type="submit" value="Add Pet" />
+      <input className={styles.button} type="submit" value="Add Pet" />
     </form>
   );
 };
