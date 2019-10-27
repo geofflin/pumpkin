@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import {
   Route,
   Switch,
-  Link,
+  NavLink,
   Redirect,
 } from 'react-router-dom';
 import * as actions from '../actions/actions';
 import MyPets from '../routes/MyPets';
 import PetsNew from '../routes/PetsNew';
 import PetsSuccess from '../routes/PetsSuccess';
+import styles from './PetsContainer.css';
 
 const mapStateToProps = store => ({
   ...store.pets,
@@ -27,7 +28,7 @@ const mapDispatchToProps = dispatch => ({
 
 const PetsContainer = props => (
   <Fragment>
-    <Link to="/my-pets">Home</Link>
+    <NavLink className={styles.navButton} to="/my-pets">Home</NavLink>
     <hr />
     <Switch>
       <Route exact path="/">
