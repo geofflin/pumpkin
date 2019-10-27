@@ -4,6 +4,7 @@
   "description": "takehome",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build && node ./src/server/server.js",
     "build": "webpack -p",
     "dev": "webpack-dev-server & json-server --watch db.json --port 3001",
     "test": "jest"
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/geofflin/pumpkin#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "history": "^4.10.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
